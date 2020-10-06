@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    mapper 是当前文件的根目录，是必须的。
+    namespace：叫做命名空间，唯一值，要求使用dao接口的全限定名称。
+ -->
+<mapper namespace="com.dongxing.dao.StudentDao">
+
+    <select id="selectAllStudents" resultType="Student">
+        select id,name,email,age from student order by id
+    </select>
+    <insert id="insertStudent">
+        insert into student(name,age,email) values (#{name},#{age},#{email})
+    </insert>
+</mapper>
